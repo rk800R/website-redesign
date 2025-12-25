@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCB Players (Redesigned)</title>
+    <link rel="stylesheet" href="assets/css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+        }
+
+        .page-heading {
+            margin: 40px auto 10px;
+            width: 80%;
+            color: #0b4f2f;
+        }
+
+        .search-box {
+            background: white;
+            margin: 10px auto 30px;
+            padding: 20px;
+            width: 80%;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-box input, .search-box select {
+            padding: 10px;
+            flex: 1;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .search-box button {
+            padding: 10px 20px;
+            background: #d71920;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .players-container {
+            width: 85%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .player-card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .player-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .player-card h3 {
+            margin: 10px 0 5px;
+        }
+
+        .player-card p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .player-card button {
+            margin-top: 10px;
+            padding: 6px 12px;
+            background: #0b4f2f;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+        }
+
+        .modal-content {
+            background: white;
+            width: 420px;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 22px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/PakistanCricketBoard" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com/TheRealPCB" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/therealpcb" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UCiWrjBhlICf_L_RK5y6Vrxw" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@pcb" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <form class="search-form">
+                    <input type="text" placeholder="Search PCB website...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="#"><img src="Media/pcb-logo.png" alt="Pakistan Cricket Board"></a>
+                </div>
+                
+                <nav class="main-nav">
+                    <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+                    <ul>
+                        <li><a href="pcb.html">Home</a></li>
+                        <li>
+                            <a href="#">Teams <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="#">Men's National Team</a></li>
+                                <li><a href="#">Women's National Team</a></li>
+                                <li><a href="#">U19 Teams</a></li>
+                                <li><a href="#">Domestic Teams</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="players.html" class="active">Players</a></li>
+                        <li>
+                            <a href="#">Latest <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="News.html">News</a></li>
+                                <li><a href="match_report.html">Match Reports</a></li>
+                                <li><a href="photos.html">Photos</a></li>
+                                <li><a href="videos.html">Videos</a></li>
+                                <li><a href="podcast.html">Podcasts</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="halloffame.html">Hall of Fame</a></li>
+                        <li><a href="About.html">About PCB</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+<h1 class="page-heading">PCB Players Directory</h1>
+
+
+<div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search player name">
+    <select id="regionFilter">
+        <option value="all">All Regions</option>
+        <option value="Punjab">Punjab</option>
+        <option value="Sindh">Sindh</option>
+        <option value="KPK">KPK</option>
+        <option value="Balochistan">Balochistan</option>
+        <option value="Gilgit Baltistan">Gilgit Baltistan</option>
+        <option value="Kashmir">Kashmir</option>
+    </select>
+    <button onclick="searchPlayers()">Search</button>
+</div>
+
+
+<div class="players-container">
+
+    <div class="player-card" data-name="babar azam" data-region="Punjab">
+        <img src="Media/BabarAzam.png">
+        <h3>Babar Azam</h3>
+        <p>Batter | Punjab</p>
+        <button onclick="openModal('Babar Azam','5','1','3','Fastest Pakistani to 5000 ODI runs')">View Profile</button>
+    </div>
+
+    <div class="player-card" data-name="fakhar zaman" data-region="KPK">
+        <img src="Media/FakharZaman.webp">
+        <h3>Fakhar Zaman</h3>
+        <p>Batter | KPK</p>
+        <button onclick="openModal('Fakhar Zaman','18','12','22','Highest individual score by a Pakistani in ODIs')">View Profile</button>
+    </div>
+
+    <div class="player-card" data-name="sahibzada farhan" data-region="KPK">
+        <img src="Media/SahibzadaFarhan.webp">
+        <h3>Sahibzada Farhan</h3>
+        <p>Batter | KPK</p>
+        <button onclick="openModal('Sahibzada Farhan','—','—','35','Consistent domestic performer')">View Profile</button>
+    </div>
+
+    <div class="player-card" data-name="saim ayub" data-region="Sindh">
+        <img src="Media/SaimAyub.webp">
+        <h3>Saim Ayub</h3>
+        <p>All-Rounder | Sindh</p>
+        <button onclick="openModal('Saim Ayub','—','—','28','Emerging young talent')">View Profile</button>
+    </div>
+
+    <div class="player-card" data-name="salman ali agha" data-region="Punjab">
+        <img src="Media/Salman.png">
+        <h3>Salman Ali Agha</h3>
+        <p>All-Rounder | Punjab</p>
+        <button onclick="openModal('Salman Ali Agha','22','19','30','Reliable middle-order all-rounder')">View Profile</button>
+    </div>
+
+
+
+    <div class="player-card" data-name="shaheen afridi" data-region="KPK">
+        <img src="Media/ShaheenAfridi.png">
+        <h3>Shaheen Afridi</h3>
+        <p>Bowler | KPK</p>
+        <button onclick="openModal('Shaheen Afridi','4','7','6','Left-arm pace spearhead')">View Profile</button>
+    </div>
+
+    <div class="player-card" data-name="hasan ali" data-region="Punjab">
+        <img src="Media/HasanAli.webp">
+        <h3>Hasan Ali</h3>
+        <p>Bowler | Punjab</p>
+        <button onclick="openModal('Hasan Ali','—','10','9','Key fast bowler')">View Profile</button>
+    </div>
+
+    <div class="player-card" data-name="shadab khan" data-region="Punjab">
+        <img src="Media/ShadabKhan.webp">
+        <h3>Shadab Khan</h3>
+        <p>All-Rounder | Punjab</p>
+        <button onclick="openModal('Shadab Khan','—','8','5','Spin-bowling all-rounder')">View Profile</button>
+    </div>
+
+    <div class="player-card" data-name="mohammad rizwan" data-region="Punjab">
+        <img src="Media/Rizwan.webp">
+        <h3>Mohammad Rizwan</h3>
+        <p>Wicket-Keeper | KPK</p>
+        <button onclick="openModal('Mohammad Rizwan','9','3','4','Reliable wicket-keeper batter')">View Profile</button>
+    </div>
+
+    <div class="player-card" data-name="imam-ul-haq" data-region="Punjab">
+        <img src="Media/ImamUlHaq.jpg">
+        <h3>Imam-ul-Haq</h3>
+        <p>Batter | Punjab</p>
+        <button onclick="openModal('Imam-ul-Haq','—','—','—','Opening batter')">View Profile</button>
+    </div>
+
+    <div class="player-card" data-name="fawad alam" data-region="Sindh">
+        <img src="Media/FawadAlam.jpeg">
+        <h3>Fawad Alam</h3>
+        <p>Batter | Sindh</p>
+        <button onclick="openModal('Fawad Alam','—','—','—','Experienced top-order batter')">View Profile</button>
+    </div>
+
+    <div class="player-card" data-name="haider ali" data-region="Punjab">
+        <img src="Media/Haider.webp">
+        <h3>Haider Ali</h3>
+        <p>Batter | Punjab</p>
+        <button onclick="openModal('Haider Ali','—','—','—','Explosive young talent')">View Profile</button>
+    </div>
+
+    <div class="player-card" data-name="asim kamil" data-region="Sindh">
+        <img src="Media/ImadWaseem.jpeg">
+        <h3>Imad Waseem</h3>
+        <p>All-Rounder | Islamabad</p>
+        <button onclick="openModal('Imad Waseem','—','—','—','Good average bowler')">View Profile</button>
+    </div>
+
+    <div class="player-card" data-name="fahim ashraf" data-region="Punjab">
+        <img src="Media/Faheem.png">
+        <h3>Fahim Ashraf</h3>
+        <p>All-Rounder | Punjab</p>
+        <button onclick="openModal('Fahim Ashraf','—','—','—','Useful lower-order all-rounder')">View Profile</button>
+    </div>
+
+</div>
+
+
+<div id="playerModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalName"></h2>
+
+        <p><strong>ICC Rankings</strong></p>
+        <ul>
+            <li>Test: <span id="testRank"></span></li>
+            <li>ODI: <span id="odiRank"></span></li>
+            <li>T20: <span id="t20Rank"></span></li>
+        </ul>
+
+        <p><strong>Records</strong></p>
+        <p id="records"></p>
+    </div>
+</div>
+
+<script>
+function openModal(name, test, odi, t20, record) {
+    document.getElementById("modalName").innerText = name;
+    document.getElementById("testRank").innerText = test;
+    document.getElementById("odiRank").innerText = odi;
+    document.getElementById("t20Rank").innerText = t20;
+    document.getElementById("records").innerText = record;
+    document.getElementById("playerModal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("playerModal").style.display = "none";
+}
+
+function searchPlayers() {
+    let nameValue = document.getElementById("searchInput").value.toLowerCase();
+    let regionValue = document.getElementById("regionFilter").value;
+    let players = document.getElementsByClassName("player-card");
+
+    for (let i = 0; i < players.length; i++) {
+        let pname = players[i].getAttribute("data-name").toLowerCase();
+        let pregion = players[i].getAttribute("data-region");
+
+        let nameMatch = pname.includes(nameValue);
+        let regionMatch = (regionValue === "all" || pregion === regionValue);
+
+        players[i].style.display = (nameMatch && regionMatch) ? "block" : "none";
+    }
+}
+
+
+document.getElementById("searchInput").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        searchPlayers();
+    }
+});
+</script>
+
+<script>
+(function(){
+    const nav=document.querySelector('.main-nav');
+    const btn=document.querySelector('.mobile-menu-btn');
+    if(!nav) return;
+
+    btn&&btn.addEventListener('click',()=>nav.classList.toggle('active'));
+
+    nav.addEventListener('click',e=>{
+        const li=e.target.closest('li');
+        if(!li) return;
+        const dd=li.querySelector('.dropdown');
+        if(window.innerWidth<=768 && dd){
+            e.preventDefault();
+            dd.style.display=dd.style.display==='block'?'none':'block';
+        }
+    });
+
+    document.addEventListener('click',e=>{
+        if(!e.target.closest('.main-nav')) nav.classList.remove('active');
+    });
+
+    document.querySelectorAll('.main-nav a').forEach(a=>a.addEventListener('click',function(){
+        document.querySelectorAll('.main-nav a').forEach(i=>i.classList.remove('active'));
+        this.classList.add('active');
+        if(window.innerWidth<=768) nav.classList.remove('active');
+    }));
+})();
+</script>
+
+</body>
+</html>

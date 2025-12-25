@@ -1,0 +1,7 @@
+[19-Dec-2025 22:39:11 Europe/Berlin] Form received - Name: Umair Ali Arif, Email: aliarifkan1122@gmail.com
+[19-Dec-2025 22:39:11 Europe/Berlin] Database Connection Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+[19-Dec-2025 22:39:11 Europe/Berlin] Database connection failed
+[19-Dec-2025 22:40:11 Europe/Berlin] Form received - Name: Umair Ali Arif, Email: aliarifkan1122@gmail.com
+[19-Dec-2025 22:40:11 Europe/Berlin] Executing SQL: INSERT INTO contact_messages (full_name, email, subject, message, created_at, status) 
+            VALUES (:full_name, :email, :subject, :message, NOW(), 'new')
+[19-Dec-2025 22:40:11 Europe/Berlin] Query executed successfully. Rows affected: 1

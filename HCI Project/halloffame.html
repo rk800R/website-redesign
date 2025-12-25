@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PCB Hall of Fame</title>
+    <link rel="stylesheet" href="assets/css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hof-hero{padding:60px 0;text-align:center;color:#fff;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('Media/halloffame-hero.jpg') center/cover}
+        .inductees-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+        .inductee{background:#fff;padding:18px;border-radius:8px;box-shadow:var(--shadow);text-align:center}
+        .inductee img{width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:12px}
+        .filter-row{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+        @media(max-width:600px){.filter-row{flex-direction:column;align-items:stretch}}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="pcb.html"><img src="Media/pcb-logo.png" alt="PCB"></a>
+                </div>
+                <nav class="main-nav">
+                    <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+                    <ul>
+                        <li><a href="pcb.html">Home</a></li>
+                        <li>
+                            <a href="#">Teams <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="#">Men's National Team</a></li>
+                                <li><a href="#">Women's National Team</a></li>
+                                <li><a href="#">U19 Teams</a></li>
+                                <li><a href="#">Domestic Teams</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Players</a></li>
+                        <li>
+                            <a href="#">Latest <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="News.html">News</a></li>
+                                <li><a href="match_report.html">Match Reports</a></li>
+                                <li><a href="photos.html">Photos</a></li>
+                                <li><a href="videos.html">Videos</a></li>
+                                <li><a href="podcast.html">Podcasts</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="halloffame.html" class="active">Hall of Fame</a></li>
+                        <li><a href="About.html">About PCB</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hof-hero">
+        <div class="container">
+            <h1>PCB Hall of Fame</h1>
+            <p style="max-width:800px;margin:12px auto 0;opacity:.95">Honouring the players, coaches and contributors who have shaped Pakistani cricket.</p>
+        </div>
+    </section>
+
+    <main class="container" style="padding:40px 15px 80px">
+        <section>
+            <h2 class="section-title">Inductees</h2>
+            <div class="filter-row">
+                <input type="search" id="hof-search" placeholder="Search inductees by name..." style="padding:8px;border-radius:6px;border:1px solid var(--lt);flex:1">
+                <select id="hof-era" style="padding:8px;border-radius:6px;border:1px solid var(--lt)">
+                    <option value="all">All eras</option>
+                    <option value="pre2000">Pre-2000</option>
+                    <option value="2000s">2000s</option>
+                    <option value="2010s">2010s+</option>
+                </select>
+            </div>
+
+            <div class="inductees-grid" id="inductees">
+                <div class="inductee" data-era="pre2000">
+                    <img src="Media/hanif.jpeg" alt="Legend 1">
+                    <h4>Hanif Mohammad</h4>
+                    <p style="color:var(--muted)">Batsman — Inducted 2005</p>
+                </div>
+
+                <div class="inductee" data-era="pre2000">
+                    <img src="Media/imran.jpeg" alt="Legend 2">
+                    <h4>Imran Khan</h4>
+                    <p style="color:var(--muted)">All-rounder — Inducted 2008</p>
+                </div>
+
+                <div class="inductee" data-era="2000s">
+                    <img src="Media/wasim.jpeg" alt="Legend 3">
+                    <h4>Wasim Akram</h4>
+                    <p style="color:var(--muted)">Fast Bowler — Inducted 2012</p>
+                </div>
+
+                <div class="inductee" data-era="2010s">
+                    <img src="media/younis.jpeg" alt="Legend 4">
+                    <h4>Younis Khan</h4>
+                    <p style="color:var(--muted)">Batsman — Inducted 2018</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top:40px">
+            <h2 class="section-title">Nominate a Candidate</h2>
+            <p>Know someone who should be in the Hall of Fame? Send us a nomination with reasons and supporting references.</p>
+            <form style="max-width:700px;margin-top:12px">
+                <input type="text" placeholder="Full name" required style="width:100%;padding:10px;border-radius:6px;border:1px solid var(--lt);margin-bottom:8px">
+                <input type="email" placeholder="Your email" required style="width:100%;padding:10px;border-radius:6px;border:1px solid var(--lt);margin-bottom:8px">
+                <textarea placeholder="Why nominate this person?" rows="5" style="width:100%;padding:10px;border-radius:6px;border:1px solid var(--lt);margin-bottom:8px"></textarea>
+                <button class="btn" type="submit">Submit Nomination</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-widget">
+                    <h3>About PCB</h3>
+                    <ul>
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="#">Board of Governors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#">PCB Live</a></li>
+                        <li><a href="#">PCB Shop</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3>Media</h3>
+                    <ul>
+                        <li><a href="#">News</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Pakistan Cricket Board.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // small client-side filtering for the inductees grid
+        (function(){
+            const search = document.getElementById('hof-search');
+            const era = document.getElementById('hof-era');
+            const grid = document.getElementById('inductees');
+            const items = Array.from(grid.children);
+            function applyFilter(){
+                const q = search.value.trim().toLowerCase();
+                const e = era.value;
+                items.forEach(it=>{
+                    const name = it.querySelector('h4').textContent.toLowerCase();
+                    const itemEra = it.getAttribute('data-era') || 'all';
+                    const matchQ = !q || name.includes(q);
+                    const matchEra = e==='all' || itemEra===e || (e==='2000s' && itemEra==='2000s') || (e==='2010s' && itemEra==='2010s');
+                    it.style.display = (matchQ && matchEra) ? '' : 'none';
+                });
+            }
+            search.addEventListener('input',applyFilter);
+            era.addEventListener('change',applyFilter);
+        })();
+    </script>
+</body>
+</html>

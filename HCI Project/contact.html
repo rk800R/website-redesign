@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact | Pakistan Cricket Board</title>
+    <link rel="stylesheet" href="assets/css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-hero{padding:60px 0;text-align:center;color:#fff;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('Media/contact-hero.jpg') center/cover}
+        .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:30px;align-items:start}
+        @media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+        .info-card{background:#fff;padding:20px;border-radius:8px;box-shadow:var(--shadow)}
+        .hero-subtitle{max-width:800px;margin:12px auto 0;opacity:.95}
+        .contact-main{padding:40px 15px 80px}
+        .contact-form{display:grid;gap:12px}
+        .contact-form input,
+        .contact-form textarea{padding:10px;border-radius:6px;border:1px solid var(--lt)}
+        .contact-form textarea{resize:vertical}
+        .form-footer{display:flex;gap:12px;align-items:center}
+        .text-muted{color:var(--muted)}
+        .card-spacing{margin-top:16px}
+        .info-card hr{margin:12px 0}
+        .follow-links{display:flex;gap:10px;margin-top:8px}
+        .alert{padding:15px;border-radius:6px;margin-bottom:20px;font-size:14px}
+        .alert-success{background:#d4edda;color:#155724;border:1px solid #c3e6cb}
+        .alert-error{background:#f8d7da;color:#721c24;border:1px solid #f5c6cb}
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="pcb.html"><img src="Media/pcb-logo.png" alt="Pakistan Cricket Board"></a>
+                </div>
+                <nav class="main-nav">
+                    <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+                    <ul>
+                        <li><a href="pcb.html">Home</a></li>
+                        <li>
+                            <a href="#">Teams <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="#">Men's National Team</a></li>
+                                <li><a href="#">Women's National Team</a></li>
+                                <li><a href="#">U19 Teams</a></li>
+                                <li><a href="#">Domestic Teams</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Players</a></li>
+                        <li>
+                            <a href="#">Latest <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="News.html">News</a></li>
+                                <li><a href="match_report.html">Match Reports</a></li>
+                                <li><a href="photos.html">Photos</a></li>
+                                <li><a href="videos.html">Videos</a></li>
+                                <li><a href="podcast.html">Podcasts</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="halloffame.html">Hall of Fame</a></li>
+                        <li><a href="About.html">About PCB</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Contact PCB</h1>
+            <p class="hero-subtitle">Get in touch for media, partnerships, careers or general enquiries. We aim to respond within 2 business days.</p>
+        </div>
+    </section>
+
+    <main class="container contact-main">
+        <div class="contact-grid">
+            <div>
+                <div id="statusAlert" style="display:none;"></div>
+                <h2 class="section-title">Send Us a Message</h2>
+                <form class="info-card contact-form" method="post" action="submit_contact.php">
+                    <input type="text" name="full_name" id="full_name" placeholder="Your full name" required>
+                    <input type="email" name="email" id="email" placeholder="Email address" required>
+                    <input type="text" name="subject" id="subject" placeholder="Subject">
+                    <textarea name="message" id="message" placeholder="Your message" rows="6" required></textarea>
+                    <div class="form-footer">
+                        <button class="btn" type="submit">Send Message</button>
+                        <small class="text-muted">Or email us at <a href="mailto:info@pcb.com.pk">info@pcb.com.pk</a></small>
+                    </div>
+                </form>
+            </div>
+
+            <aside>
+                <h2 class="section-title">Office & Contacts</h2>
+                <div class="info-card">
+                    <p><strong>Pakistan Cricket Board</strong></p>
+                    <p>National Cricket Stadium, Lahore, Pakistan</p>
+                    <p><strong>Phone:</strong> +92 21 111 222 333</p>
+                    <p><strong>Email:</strong> <a href="mailto:info@pcb.com.pk">info@pcb.com.pk</a></p>
+                    <hr>
+                    <p><strong>Media Enquiries</strong><br><a href="mailto:media@pcb.com.pk">media@pcb.com.pk</a></p>
+                    <p class="text-muted"><strong>Partnerships</strong><br><a href="mailto:partners@pcb.com.pk">partners@pcb.com.pk</a></p>
+                </div>
+                <div class="info-card card-spacing">
+                    <h4>Follow Us</h4>
+                    <div class="follow-links">
+                        <a class="social-icons" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="social-icons" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="social-icons" href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-widget">
+                    <h3>About PCB</h3>
+                    <ul>
+                        <li><a href="About.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#">PCB Live</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h3>Media</h3>
+                    <ul>
+                        <li><a href="#">News</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Pakistan Cricket Board.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function(){
+            const nav=document.querySelector('.main-nav');
+            const btn=document.querySelector('.mobile-menu-btn');
+            btn&&btn.addEventListener('click',()=>nav.classList.toggle('active'));
+            document.addEventListener('click',e=>{if(!e.target.closest('.main-nav')) nav.classList.remove('active')});
+        })();
+    </script>
+    <script src="contact-form.js"></script>
+</body>
+</html>

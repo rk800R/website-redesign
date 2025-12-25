@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About PCB | Pakistan Cricket Board</title>
+	<link rel="stylesheet" href="assets/css/fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="style.css">
+	<style>
+		/* Small page-specific tweaks kept inline for quick overrides (optional) */
+		.about-hero{padding:60px 0;text-align:center;color:#fff;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('Media/about-hero.jpg') center/cover}
+		.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+		.team-card{background:#fff;padding:18px;border-radius:8px;box-shadow:var(--shadow);text-align:center}
+		.team-card img{width:96px;height:96px;border-radius:50%;object-fit:cover;margin-bottom:12px}
+	</style>
+</head>
+<body>
+	<!-- Header (reuse from main site for consistency) -->
+	<header class="main-header">
+		<div class="container">
+			<div class="header-content">
+				<div class="logo">
+					<a href="pcb.html"><img src="Media/pcb-logo.png" alt="Pakistan Cricket Board"></a>
+				</div>
+				<nav class="main-nav">
+					<button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+					<ul>
+						<li><a href="pcb.html">Home</a></li>
+						<li>
+							<a href="#">Teams <i class="fas fa-chevron-down"></i></a>
+							<ul class="dropdown">
+								<li><a href="#">Men's National Team</a></li>
+								<li><a href="#">Women's National Team</a></li>
+								<li><a href="#">U19 Teams</a></li>
+								<li><a href="#">Domestic Teams</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Players</a></li>
+						<li>
+							<a href="#">Latest <i class="fas fa-chevron-down"></i></a>
+							<ul class="dropdown">
+								<li><a href="News.html">News</a></li>
+								<li><a href="match_report.html">Match Reports</a></li>
+								<li><a href="photos.html">Photos</a></li>
+								<li><a href="videos.html">Videos</a></li>
+								<li><a href="podcast.html">Podcasts</a></li>
+							</ul>
+						</li>
+						<li><a href="halloffame.html">Hall of Fame</a></li>
+						<li><a href="About.html" class="active">About PCB</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<!-- Hero -->
+	<section class="about-hero">
+		<div class="container">
+			<h1>About Pakistan Cricket Board</h1>
+			<p style="max-width:820px;margin:12px auto 0;font-size:1.05rem;opacity:.95">The Pakistan Cricket Board (PCB) is the governing body responsible for the development, promotion and management of cricket in Pakistan across all levels — national, domestic and grassroots.</p>
+		</div>
+	</section>
+
+	<main class="container" style="padding:40px 15px 80px">
+		<!-- Mission -->
+		<section id="mission" style="margin-bottom:40px">
+			<h2 class="section-title">Our Mission</h2>
+			<p>To nurture world-class cricketers, deliver outstanding competitions and grow cricket's reach across Pakistan through sustainable programmes and strong governance.</p>
+		</section>
+
+		<!-- History / Timeline -->
+		<section id="history" style="margin-bottom:40px">
+			<h2 class="section-title">History &amp; Milestones</h2>
+			<ul style="padding-left:0;list-style:none">
+				<li style="margin-bottom:12px"><strong>1948</strong> — PCB established to govern cricket in Pakistan after independence.</li>
+				<li style="margin-bottom:12px"><strong>1992</strong> — Pakistan won its first ICC Cricket World Cup.</li>
+				<li style="margin-bottom:12px"><strong>2009–present</strong> — Major investments in domestic structure and player pathways.</li>
+			</ul>
+		</section>
+
+		<!-- Team -->
+		<section id="team" style="margin-bottom:40px">
+			<h2 class="section-title">Our Team</h2>
+			<div class="team-grid">
+				<div class="team-card">
+					<img src="Media/portrait.png" alt="CEO">
+					<h4>Mr. Ahmed Khan</h4>
+					<p style="color:var(--muted)">President &amp; CEO</p>
+				</div>
+				<div class="team-card">
+					<img src="Media/portrait.png" alt="Director">
+					<h4>Ms. Sara Malik</h4>
+					<p style="color:var(--muted)">Director, Cricket Operations</p>
+				</div>
+				<div class="team-card">
+					<img src="Media/portrait.png" alt="Coach">
+					<h4>Coach Faisal R.</h4>
+					<p style="color:var(--muted)">Head Coach</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Partners (reuse local media assets) -->
+		<section id="partners" style="margin-bottom:40px">
+			<h2 class="section-title">Partners</h2>
+			<div class="sponsors-grid">
+				<div class="sponsor-item"><img src="Media/pepsi.png" alt="Pepsi"></div>
+				<div class="sponsor-item"><img src="Media/hbl.png" alt="HBL"></div>
+				<div class="sponsor-item"><img src="Media/tcl.jpg" alt="TCL"></div>
+				<div class="sponsor-item"><img src="Media/ten-sports.jpg" alt="Ten Sports"></div>
+				<div class="sponsor-item"><img src="Media/engro.jpeg" alt="Engro"></div>
+				<div class="sponsor-item"><img src="Media/bop.png" alt="Bank of Punjab"></div>
+			</div>
+		</section>
+
+		<!-- Contact -->
+		<section id="contact">
+			<h2 class="section-title">Contact &amp; Office</h2>
+			<p>For general enquiries, media requests or corporate partnerships:</p>
+			<p><strong>Email:</strong> <a href="mailto:info@pcb.com.pk">info@pcb.com.pk</a> &nbsp;|&nbsp; <strong>Phone:</strong> +92 21 111 222 333</p>
+			<p id="contact" style="margin-top:12px">Follow us on social media for live updates and announcements.</p>
+		</section>
+	</main>
+
+	<!-- Footer (reuse same footer structure) -->
+	<footer class="main-footer">
+		<div class="container">
+			<div class="footer-content">
+				<div class="footer-widget">
+					<h3>About PCB</h3>
+					<ul>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Board of Governors</a></li>
+						<li><a href="#">Committees</a></li>
+					</ul>
+				</div>
+				<div class="footer-widget">
+					<h3>Media</h3>
+					<ul>
+						<li><a href="#">News</a></li>
+						<li><a href="#">Video Gallery</a></li>
+					</ul>
+				</div>
+				<div class="footer-widget">
+					<h3>Connect</h3>
+					<ul>
+						<li><a href="#">PCB Live</a></li>
+						<li><a href="#">PCB Shop</a></li>
+					</ul>
+				</div>
+				<div class="footer-widget">
+					<h3>Support</h3>
+					<ul>
+						<li><a href="#">Careers</a></li>
+						<li><a href="#">FAQs</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="copyright">
+				<p>&copy; 2025 Pakistan Cricket Board. All rights reserved.</p>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		// Reuse the same mobile nav script from the main page for consistent behavior
+		(function(){
+			const nav=document.querySelector('.main-nav');
+			const btn=document.querySelector('.mobile-menu-btn');
+			btn&&btn.addEventListener('click',()=>nav.classList.toggle('active'));
+			nav.addEventListener('click',e=>{
+				const li = e.target.closest('li');
+				if(!li) return;
+				const dd = li.querySelector('.dropdown');
+				if(window.innerWidth<=768 && dd){
+					e.preventDefault();
+					dd.style.display = dd.style.display==='block' ? 'none' : 'block';
+				}
+			});
+			document.addEventListener('click',e=>{if(!e.target.closest('.main-nav')) nav.classList.remove('active')});
+		})();
+	</script>
+</body>
+</html>
